@@ -3,6 +3,10 @@ from pycaret.regression import *
 import pandas as pd
 import pickle
 import numpy as np
+from os import environ as env
+
+PORT = int(env.get("PORT", 8080))
+DEBUG_MODE = int(env.get("DEBUG_MODE", 1))
 
 app = Flask(__name__)
 
@@ -31,4 +35,4 @@ def predict_api():
     return jsonify(output)
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=config.PORT, debug=config.DEBUG_MODE)
+    app.run(host="0.0.0.0", port=PORT, debug=DEBUG_MODE)
