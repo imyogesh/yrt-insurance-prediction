@@ -1,0 +1,4 @@
+2022-03-05 02:14:40,941:INFO:Initializing load_model()
+2022-03-05 02:14:40,941:INFO:load_model(model_name=deployment_28042020, platform=None, authentication=None, verbose=True)
+2022-03-05 02:14:57,129:INFO:Initializing load_model()
+2022-03-05 02:14:57,136:INFO:load_model(model_name=deployment_28042020, platform=None, authentication=None, verbose=True)
