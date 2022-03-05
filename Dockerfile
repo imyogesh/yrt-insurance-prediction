@@ -1,4 +1,4 @@
-FROM python:3.8.6
+FROM python:3.8.6-slim
 
 RUN mkdir /app
 
@@ -7,7 +7,7 @@ WORKDIR /app
 COPY . .
 
 # Install dependencies
-RUN python -m pip install --upgrade pip
+#RUN python -m pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Expose port 
