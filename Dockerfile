@@ -8,6 +8,7 @@ COPY . .
 
 # Install dependencies
 #RUN python -m pip install --upgrade pip
+RUN pip install catboost==1.0.4
 RUN pip install -r requirements.txt
 
 # Expose port 
