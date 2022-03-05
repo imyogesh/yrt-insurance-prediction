@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: gunicorn bot:app
+  web: gunicorn --bind 0.0.0.0:8080 bot:app
