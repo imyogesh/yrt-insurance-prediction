@@ -17,7 +17,7 @@ def predict():
     int_features = [x for x in request.form.values()]
     final = np.array(int_features)
     data_unseen = pd.DataFrame([final], columns = cols)
-    prediction = model.predict(data_unseen)
+    prediction = np.round(model.predict(data_unseen),0)
     prediction = int(prediction.Label[0])
     return render_template('home.html',pred='Expected Bill will be {}'.format(prediction))
 
@@ -25,7 +25,7 @@ def predict():
 def predict_api():
     data = request.get_json(force=True)
     data_unseen = pd.DataFrame([data])
-    prediction = model.predict(data_unseen)
+    prediction = np.round(model.predict(data_unseen),0)
     output = prediction.Label[0]
     return jsonify(output)
 
