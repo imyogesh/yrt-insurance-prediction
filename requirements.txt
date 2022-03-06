@@ -4,4 +4,4 @@ jinja2>=2.11.1
 gunicorn==19.9.0
 certifi==2019.11.28
 itsdangerous==1.1.0
-markupsafe==2.0.1
+MarkupSafe==2.0.1
