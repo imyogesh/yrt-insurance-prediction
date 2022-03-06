@@ -17,16 +17,16 @@ def predict():
     int_features = [x for x in request.form.values()]
     final = np.array(int_features)
     data_unseen = pd.DataFrame([final], columns = cols)
-    prediction = np.round(model.predict(data_unseen),0)
-    prediction = int(prediction.Label[0])
+    prediction = model.predict(data_unseen)
+    prediction = round(int(prediction.Label[0]),0)
     return render_template('home.html',pred='Expected Bill will be {}'.format(prediction))
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
     data = request.get_json(force=True)
     data_unseen = pd.DataFrame([data])
-    prediction = np.round(model.predict(data_unseen),0)
-    output = prediction.Label[0]
+    prediction = model.predict(data_unseen)
+    prediction = round(int(prediction.Label[0]),0)
     return jsonify(output)
 
 if __name__ == '__main__':
