@@ -10,8 +10,6 @@ model = pickle.load(open('model.pkl', 'rb'))
 
 # Creating the Titles and Image
 st.title("Predict Insurance Bill")
-st.header("Calculating the Insurance Bill based on a person's attributes")
-
 
 def load_data():
     df = pd.DataFrame({'sex': ['Male','Female'],
@@ -65,7 +63,6 @@ final_features = [np.array(int_features)]
 
 if st.button('Predict'):           # when the submit button is pressed
     prediction =  model.predict(final_features)
-    st.balloons()
-    st.success(f'Your insurance bill would be: ${round(prediction[0],2)}')
+    st.success(f'Your insurance bill would be: ${round(prediction[0],0)}')
     
 
