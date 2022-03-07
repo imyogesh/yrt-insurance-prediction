@@ -64,5 +64,5 @@ final_features = [np.array(int_features)]
 if st.button('Predict'):           # when the submit button is pressed
     prediction =  model.predict(final_features)
 #     st.success(f'Your insurance bill would be: ${round(prediction[0],0)}')
-    st.success('{}, Your insurance bill would be ${}'.format(name, {round(prediction[0],0)} ))
+    st.success('{}, your insurance bill would be ${}'.format(name, round(prediction[0],0) ))
 
